@@ -11,6 +11,20 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _usernameController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +38,7 @@ class _LoginPageState extends State<LoginPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               TextFormField(
+                controller: _usernameController,
                 decoration: const InputDecoration(hintText: 'Username'),
                 enableSuggestions: false,
                 autocorrect: false,
@@ -35,6 +50,7 @@ class _LoginPageState extends State<LoginPage> {
                 },
               ),
               TextFormField(
+                controller: _passwordController,
                 decoration: const InputDecoration(hintText: 'Password'),
                 obscureText: true,
                 enableSuggestions: false,
