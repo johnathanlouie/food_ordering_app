@@ -66,7 +66,7 @@ class _LoginPageState extends State<LoginPage> {
                           password: _passwordController.text,
                         )
                             .then((UserCredential credentials) {
-                          Navigator.of(context).push(
+                          Navigator.of(context).pushReplacement(
                             MaterialPageRoute(
                                 builder: (BuildContext context) =>
                                     MyHomePage()),
@@ -96,7 +96,7 @@ class _LoginPageState extends State<LoginPage> {
                             password: _passwordController.text,
                           )
                               .then((UserCredential credentials) {
-                            Navigator.of(context).push(
+                            Navigator.of(context).pushReplacement(
                               MaterialPageRoute(
                                   builder: (BuildContext context) =>
                                       MyHomePage()),
