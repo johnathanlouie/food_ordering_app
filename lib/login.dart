@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'home.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -11,17 +13,21 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  User? user;
 
   @override
   void initState() {
     super.initState();
+    Firebase.initializeApp().then((FirebaseApp app) {
+      user = FirebaseAuth.instance.currentUser;
+    });
   }
 
   @override
   void dispose() {
-    _usernameController.dispose();
+    _emailController.dispose();
     _passwordController.dispose();
     super.dispose();
   }
@@ -38,13 +44,13 @@ class _LoginPageState extends State<LoginPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               TextFormField(
-                controller: _usernameController,
-                decoration: const InputDecoration(hintText: 'Username'),
+                controller: _emailController,
+                decoration: const InputDecoration(hintText: 'Email address'),
                 enableSuggestions: false,
                 autocorrect: false,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Enter your username.';
+                    return 'Enter your email address.';
                   }
                   return null;
                 },
@@ -79,6 +85,24 @@ class _LoginPageState extends State<LoginPage> {
                     child: ElevatedButton(
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
+                          FirebaseAuth.instance
+                              .createUserWithEmailAndPassword(
+                            email: _emailController.text,
+                            password: _passwordController.text,
+                          )
+                              .then((UserCredential credentials) {
+                            user = credentials.user;
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      MyHomePage()),
+                            );
+                          }).catchError((error) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                  content: Text('Error registering user.')),
+                            );
+                          });
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
                                 content: Text('Registering new user....')),
