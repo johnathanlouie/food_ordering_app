@@ -8,6 +8,15 @@ class LoadingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Text(title, style: TextStyle(color: Colors.pink)));
+    return Scaffold(
+      body: Center(
+          child: Text(
+        title,
+        style: TextStyle(
+          color: Colors.pink,
+          fontSize: 48,
+        ),
+      )),
+    );
   }
 }
