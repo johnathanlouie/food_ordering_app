@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -135,8 +134,6 @@ class _LoginPageState extends State<LoginPage> {
   @override
   void initState() {
     super.initState();
-    Firebase.initializeApp().then((FirebaseApp app) {
-      user = FirebaseAuth.instance.currentUser;
-    });
+    user = FirebaseAuth.instance.currentUser;
   }
 }
