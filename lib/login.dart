@@ -15,7 +15,6 @@ class _LoginPageState extends State<LoginPage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  User? user;
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +66,6 @@ class _LoginPageState extends State<LoginPage> {
                           password: _passwordController.text,
                         )
                             .then((UserCredential credentials) {
-                          user = credentials.user;
                           Navigator.of(context).push(
                             MaterialPageRoute(
                                 builder: (BuildContext context) =>
@@ -98,7 +96,6 @@ class _LoginPageState extends State<LoginPage> {
                             password: _passwordController.text,
                           )
                               .then((UserCredential credentials) {
-                            user = credentials.user;
                             Navigator.of(context).push(
                               MaterialPageRoute(
                                   builder: (BuildContext context) =>
@@ -129,11 +126,5 @@ class _LoginPageState extends State<LoginPage> {
     _emailController.dispose();
     _passwordController.dispose();
     super.dispose();
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    user = FirebaseAuth.instance.currentUser;
   }
 }
