@@ -62,6 +62,24 @@ class _LoginPageState extends State<LoginPage> {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(content: Text('Logging in....')),
                         );
+                        FirebaseAuth.instance
+                            .signInWithEmailAndPassword(
+                          email: _emailController.text,
+                          password: _passwordController.text,
+                        )
+                            .then((UserCredential credentials) {
+                          user = credentials.user;
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    MyHomePage()),
+                          );
+                        }).catchError((error) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                                content: Text('Error registering user.')),
+                          );
+                        });
                       }
                     },
                     child: const Text('Login'),
@@ -71,6 +89,10 @@ class _LoginPageState extends State<LoginPage> {
                     child: ElevatedButton(
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                                content: Text('Registering new user....')),
+                          );
                           FirebaseAuth.instance
                               .createUserWithEmailAndPassword(
                             email: _emailController.text,
@@ -89,10 +111,6 @@ class _LoginPageState extends State<LoginPage> {
                                   content: Text('Error registering user.')),
                             );
                           });
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                                content: Text('Registering new user....')),
-                          );
                         }
                       },
                       child: const Text('Register'),
