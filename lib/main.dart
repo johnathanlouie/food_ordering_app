@@ -7,15 +7,15 @@ import 'login.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(App());
+  runApp(MyApp());
 }
 
-class App extends StatefulWidget {
+class MyApp extends StatefulWidget {
   @override
-  _AppState createState() => _AppState();
+  _MyAppState createState() => _MyAppState();
 }
 
-class _AppState extends State<App> {
+class _MyAppState extends State<MyApp> {
   final Future<FirebaseApp> _initialization = Firebase.initializeApp();
 
   @override
