@@ -1,7 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'common.dart';
+import 'home.dart';
 
 class AccountPage extends StatefulWidget {
   @override
@@ -42,7 +44,16 @@ class _AccountPageState extends State<AccountPage> {
             onTap: () {},
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () async {
+              try {
+                await FirebaseAuth.instance.signOut();
+                Navigator.of(context).pushReplacement(MaterialPageRoute(
+                  builder: (BuildContext context) => MyHomePage(),
+                ));
+              } catch (e) {
+                print("Sign out error: $e"); // TODO add error handling
+              }
+            },
             child: Text('Sign Out'),
           ),
         ],
