@@ -15,6 +15,7 @@ class _SignUpPageState extends State<SignUpPage> {
   final TextEditingController _lastName = TextEditingController();
   final TextEditingController _email = TextEditingController();
   final TextEditingController _password = TextEditingController();
+  bool _isToSAccepted = false;
 
   @override
   Widget build(BuildContext context) {
@@ -95,9 +96,14 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
               ),
               Divider(),
-              ListTile(
-                leading: Checkbox(value: false, onChanged: (isChecked) {}),
-                title: Text('I accept the Terms of Use.'),
+              CheckboxListTile(
+                value: _isToSAccepted,
+                onChanged: (isChecked) {
+                  setState(() {
+                    _isToSAccepted = isChecked!;
+                  });
+                },
+                title: const Text('I accept the Terms of Use.'),
                 subtitle: Text(
                     'By joining, I agree to Restaurant Rewards Terms, Restaurant Card Terms, and the Application Terms.'),
               ),
