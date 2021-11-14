@@ -34,7 +34,10 @@ class _SignUpPageState extends State<SignUpPage> {
                   style: Theme.of(context).textTheme.headline6,
                 ),
               ),
-              Divider(),
+              Divider(
+                thickness: 2.0,
+                color: Colors.deepPurple,
+              ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextField(
@@ -63,7 +66,10 @@ class _SignUpPageState extends State<SignUpPage> {
                   style: Theme.of(context).textTheme.headline6,
                 ),
               ),
-              Divider(),
+              Divider(
+                thickness: 2.0,
+                color: Colors.deepPurple,
+              ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextField(
@@ -95,7 +101,10 @@ class _SignUpPageState extends State<SignUpPage> {
                   style: Theme.of(context).textTheme.headline6,
                 ),
               ),
-              Divider(),
+              Divider(
+                thickness: 2.0,
+                color: Colors.deepPurple,
+              ),
               CheckboxListTile(
                 value: _isToSAccepted,
                 onChanged: (isChecked) {
