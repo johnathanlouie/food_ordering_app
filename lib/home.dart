@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import 'common.dart';
+import 'package:lwd_food_ordering_app/common.dart';
 
 class MyHomePage extends StatefulWidget {
   @override

@@ -1,11 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import 'account.dart';
-import 'home.dart';
-import 'menu.dart';
-import 'pay.dart';
-import 'rewards.dart';
+import 'package:lwd_food_ordering_app/account.dart';
+import 'package:lwd_food_ordering_app/home.dart';
+import 'package:lwd_food_ordering_app/menu.dart';
+import 'package:lwd_food_ordering_app/pay.dart';
+import 'package:lwd_food_ordering_app/rewards.dart';
 
 BottomNavigationBar myBottomBar(BuildContext context,
     {required int currentIndex}) {
