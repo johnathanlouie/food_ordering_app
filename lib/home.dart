@@ -24,13 +24,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Container(child: Image.asset('assets/banner.png')),
           Container(
             margin: EdgeInsets.only(top: 28),
-            child: Text(
-              'Menu',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+            child: Text('Menu', style: Theme.of(context).textTheme.headline5),
           ),
           Container(
             height: 100,
@@ -47,13 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           Container(
             margin: EdgeInsets.only(top: 28),
-            child: Text(
-              'Deals',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+            child: Text('Deals', style: Theme.of(context).textTheme.headline5),
           ),
           Container(
             margin: EdgeInsets.only(top: 0),
@@ -63,10 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
             margin: EdgeInsets.only(top: 6),
             child: Text(
               '*Nulla in pulvinar libero. Suspendisse fermentum erat in odio auctor malesuada. Vivamus rutrum faucibus purus sodales interdum. Nunc eu ornare nisl. Sed at turpis suscipit metus egestas eleifend sit amet dignissim felis. Donec eleifend orci in leo porttitor mollis. Fusce consequat iaculis dapibus.',
-              style: TextStyle(
-                fontSize: 10,
-                color: Colors.grey,
-              ),
+              style: Theme.of(context).textTheme.caption,
             ),
           ),
           Container(
@@ -77,10 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
             margin: EdgeInsets.only(top: 6),
             child: Text(
               '*Nulla in pulvinar libero. Suspendisse fermentum erat in odio auctor malesuada. Vivamus rutrum faucibus purus sodales interdum. Nunc eu ornare nisl. Sed at turpis suscipit metus egestas eleifend sit amet dignissim felis. Donec eleifend orci in leo porttitor mollis. Fusce consequat iaculis dapibus.',
-              style: TextStyle(
-                fontSize: 10,
-                color: Colors.grey,
-              ),
+              style: Theme.of(context).textTheme.caption,
             ),
           ),
         ],
