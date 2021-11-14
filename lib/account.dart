@@ -22,44 +22,45 @@ class _AccountPageState extends State<AccountPage> {
       ),
       body: Column(
         children: <Widget>[
-          FirebaseAuth.instance.currentUser == null
-              ? Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => SignUpPage(),
-                            ));
-                          },
-                          child: Text('Sign Up'),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: OutlinedButton(
-                          onPressed: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => LoginPage(),
-                            ));
-                          },
-                          child: Text('Log In'),
-                        ),
-                      ),
-                    ],
+          Visibility(
+            visible: FirebaseAuth.instance.currentUser == null,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => SignUpPage(),
+                        ));
+                      },
+                      child: Text('Sign Up'),
+                    ),
                   ),
-                )
-              : ListTile(
-                  title: Text(
-                    'FirstName LastName',
-                    style: Theme.of(context).textTheme.headline5,
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: OutlinedButton(
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => LoginPage(),
+                        ));
+                      },
+                      child: Text('Log In'),
+                    ),
                   ),
-                  subtitle:
-                      Text(FirebaseAuth.instance.currentUser?.email ?? ''),
-                ),
+                ],
+              ),
+            ),
+            replacement: ListTile(
+              title: Text(
+                'FirstName LastName',
+                style: Theme.of(context).textTheme.headline5,
+              ),
+              subtitle: Text(FirebaseAuth.instance.currentUser?.email ?? ''),
+            ),
+          ),
           ListTile(
             title: Text('Personal Info'),
             trailing: Icon(Icons.navigate_next_rounded),
