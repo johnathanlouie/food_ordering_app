@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lwd_food_ordering_app/home.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -143,8 +144,35 @@ class _SignUpPageState extends State<SignUpPage> {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child:
-                    ElevatedButton(onPressed: () {}, child: Text('Join Now')),
+                child: ElevatedButton(
+                  onPressed: () async {
+                    if (_isToSAccepted) {
+                      if (_signUpKey.currentState!.validate()) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text('Registering the user....'),
+                          ),
+                        );
+                        await FirebaseAuth.instance
+                            .createUserWithEmailAndPassword(
+                          email: _email.text,
+                          password: _password.text,
+                        );
+                        // TODO initialize user info in the db
+                        Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(builder: (context) => MyHomePage()),
+                        );
+                      }
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('Accept the Terms of Use.'),
+                        ),
+                      );
+                    }
+                  },
+                  child: Text('Join Now'),
+                ),
               ),
             ],
           ),
