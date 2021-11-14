@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'common.dart';
 import 'home.dart';
+import 'login.dart';
 
 class AccountPage extends StatefulWidget {
   @override
@@ -21,6 +22,21 @@ class _AccountPageState extends State<AccountPage> {
       ),
       body: Column(
         children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                OutlinedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => LoginPage(),
+                    ));
+                  },
+                  child: Text('Sign In'),
+                ),
+              ],
+            ),
+          ),
           ListTile(
             title: Text(
               'FirstName LastName',
