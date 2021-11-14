@@ -16,7 +16,7 @@ class _AccountPageState extends State<AccountPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Account')),
-      bottomNavigationBar: MyBottomBar(currentIndex: 4),
+      bottomNavigationBar: MyBottomBar(MyBottomBar.ACCOUNT),
       body: Column(
         children: <Widget>[
           Visibility(
