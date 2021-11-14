@@ -11,6 +11,10 @@ class SignUpPage extends StatefulWidget {
 
 class _SignUpPageState extends State<SignUpPage> {
   final GlobalKey<FormState> _signUpKey = GlobalKey<FormState>();
+  final TextEditingController _firstName = TextEditingController();
+  final TextEditingController _lastName = TextEditingController();
+  final TextEditingController _email = TextEditingController();
+  final TextEditingController _password = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +37,7 @@ class _SignUpPageState extends State<SignUpPage> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextField(
+                  controller: _firstName,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     hintText: 'First Name',
@@ -43,6 +48,7 @@ class _SignUpPageState extends State<SignUpPage> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextField(
+                  controller: _lastName,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     hintText: 'Last Name',
@@ -60,6 +66,7 @@ class _SignUpPageState extends State<SignUpPage> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextField(
+                  controller: _email,
                   autocorrect: false,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
@@ -70,6 +77,7 @@ class _SignUpPageState extends State<SignUpPage> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextField(
+                  controller: _password,
                   autocorrect: false,
                   obscureText: true,
                   enableSuggestions: false,
