@@ -40,8 +40,14 @@ class _SignUpPageState extends State<SignUpPage> {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: TextField(
+                child: TextFormField(
                   controller: _firstName,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Enter your first name.';
+                    }
+                    return null;
+                  },
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     hintText: 'First Name',
@@ -51,8 +57,14 @@ class _SignUpPageState extends State<SignUpPage> {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: TextField(
+                child: TextFormField(
                   controller: _lastName,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Enter your last name.';
+                    }
+                    return null;
+                  },
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     hintText: 'Last Name',
@@ -72,8 +84,14 @@ class _SignUpPageState extends State<SignUpPage> {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: TextField(
+                child: TextFormField(
                   controller: _email,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Enter your email.';
+                    }
+                    return null;
+                  },
                   autocorrect: false,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
@@ -83,8 +101,14 @@ class _SignUpPageState extends State<SignUpPage> {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: TextField(
+                child: TextFormField(
                   controller: _password,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Enter your password.';
+                    }
+                    return null;
+                  },
                   autocorrect: false,
                   obscureText: true,
                   enableSuggestions: false,
