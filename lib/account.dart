@@ -57,7 +57,7 @@ class _AccountPageState extends State<AccountPage> {
               'FirstName LastName',
               style: Theme.of(context).textTheme.headline5,
             ),
-            subtitle: Text('fake@email.com'),
+            subtitle: Text(FirebaseAuth.instance.currentUser?.email ?? ''),
           ),
           ListTile(
             title: Text('Personal Info'),
