@@ -2,8 +2,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'home.dart';
 import 'loading.dart';
-import 'login.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
         if (snapshot.hasError) {
           w = LoadingPage(title: 'Error!');
         } else if (snapshot.connectionState == ConnectionState.done) {
-          w = LoginPage();
+          w = MyHomePage();
         } else {
           w = LoadingPage(title: 'Loading....');
         }
