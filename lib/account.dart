@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lwd_food_ordering_app/signup.dart';
 
 import 'common.dart';
 import 'home.dart';
@@ -26,6 +27,17 @@ class _AccountPageState extends State<AccountPage> {
             padding: const EdgeInsets.all(8.0),
             child: Row(
               children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => SignUpPage(),
+                      ));
+                    },
+                    child: Text('Sign Up'),
+                  ),
+                ),
                 OutlinedButton(
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
