@@ -6,87 +6,93 @@ import 'package:lwd_food_ordering_app/menu.dart';
 import 'package:lwd_food_ordering_app/pay.dart';
 import 'package:lwd_food_ordering_app/rewards.dart';
 
-BottomNavigationBar myBottomBar(BuildContext context,
-    {required int currentIndex}) {
-  return BottomNavigationBar(
-    currentIndex: currentIndex,
-    items: <BottomNavigationBarItem>[
-      BottomNavigationBarItem(
-        icon: IconButton(
-          icon: Icon(Icons.home),
-          onPressed: () {
-            if (currentIndex != 0) {
-              Navigator.of(context).push(
-                MaterialPageRoute(builder: (BuildContext context) {
-                  return MyHomePage();
-                }),
-              );
-            }
-          },
+class MyBottomBar extends StatelessWidget {
+  final int currentIndex;
+
+  const MyBottomBar({required this.currentIndex, Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BottomNavigationBar(
+      currentIndex: currentIndex,
+      items: <BottomNavigationBarItem>[
+        BottomNavigationBarItem(
+          icon: IconButton(
+            icon: Icon(Icons.home),
+            onPressed: () {
+              if (currentIndex != 0) {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (BuildContext context) {
+                    return MyHomePage();
+                  }),
+                );
+              }
+            },
+          ),
+          label: 'Home',
         ),
-        label: 'Home',
-      ),
-      BottomNavigationBarItem(
-        icon: IconButton(
-          icon: Icon(Icons.menu_book),
-          onPressed: () {
-            if (currentIndex != 1) {
-              Navigator.of(context).push(
-                MaterialPageRoute(builder: (BuildContext context) {
-                  return MenuPage();
-                }),
-              );
-            }
-          },
+        BottomNavigationBarItem(
+          icon: IconButton(
+            icon: Icon(Icons.menu_book),
+            onPressed: () {
+              if (currentIndex != 1) {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (BuildContext context) {
+                    return MenuPage();
+                  }),
+                );
+              }
+            },
+          ),
+          label: 'Menu',
         ),
-        label: 'Menu',
-      ),
-      BottomNavigationBarItem(
-        icon: IconButton(
-          icon: Icon(Icons.credit_card),
-          onPressed: () {
-            if (currentIndex != 2) {
-              Navigator.of(context).push(
-                MaterialPageRoute(builder: (BuildContext context) {
-                  return PayPage();
-                }),
-              );
-            }
-          },
+        BottomNavigationBarItem(
+          icon: IconButton(
+            icon: Icon(Icons.credit_card),
+            onPressed: () {
+              if (currentIndex != 2) {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (BuildContext context) {
+                    return PayPage();
+                  }),
+                );
+              }
+            },
+          ),
+          label: 'Pay',
         ),
-        label: 'Pay',
-      ),
-      BottomNavigationBarItem(
-        icon: IconButton(
-          icon: Icon(Icons.star),
-          onPressed: () {
-            if (currentIndex != 3) {
-              Navigator.of(context).push(
-                MaterialPageRoute(builder: (BuildContext context) {
-                  return RewardsPage();
-                }),
-              );
-            }
-          },
+        BottomNavigationBarItem(
+          icon: IconButton(
+            icon: Icon(Icons.star),
+            onPressed: () {
+              if (currentIndex != 3) {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (BuildContext context) {
+                    return RewardsPage();
+                  }),
+                );
+              }
+            },
+          ),
+          label: 'Rewards',
         ),
-        label: 'Rewards',
-      ),
-      BottomNavigationBarItem(
-        icon: IconButton(
-          icon: Icon(Icons.account_box),
-          onPressed: () {
-            if (currentIndex != 4) {
-              Navigator.of(context).push(
-                MaterialPageRoute(builder: (BuildContext context) {
-                  return AccountPage();
-                }),
-              );
-            }
-          },
+        BottomNavigationBarItem(
+          icon: IconButton(
+            icon: Icon(Icons.account_box),
+            onPressed: () {
+              if (currentIndex != 4) {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (BuildContext context) {
+                    return AccountPage();
+                  }),
+                );
+              }
+            },
+          ),
+          label: 'Account',
         ),
-        label: 'Account',
-      ),
-    ],
-    type: BottomNavigationBarType.fixed,
-  );
+      ],
+      type: BottomNavigationBarType.fixed,
+    );
+  }
 }

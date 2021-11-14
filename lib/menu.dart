@@ -51,10 +51,7 @@ class _MenuPageState extends State<MenuPage> {
         },
         itemCount: _a.length,
       ),
-      bottomNavigationBar: myBottomBar(
-        context,
-        currentIndex: 1,
-      ),
+      bottomNavigationBar: MyBottomBar(currentIndex: 1),
     );
   }
 }

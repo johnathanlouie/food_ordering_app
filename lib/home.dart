@@ -67,10 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
-      bottomNavigationBar: myBottomBar(
-        context,
-        currentIndex: 0,
-      ),
+      bottomNavigationBar: MyBottomBar(currentIndex: 0),
     );
   }
 }

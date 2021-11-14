@@ -100,10 +100,7 @@ class _RewardsPageState extends State<RewardsPage> {
           ),
         ],
       ),
-      bottomNavigationBar: myBottomBar(
-        context,
-        currentIndex: 3,
-      ),
+      bottomNavigationBar: MyBottomBar(currentIndex: 3),
     );
   }
 }

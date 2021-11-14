@@ -12,10 +12,7 @@ class _PayPageState extends State<PayPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      bottomNavigationBar: myBottomBar(
-        context,
-        currentIndex: 2,
-      ),
+      bottomNavigationBar: MyBottomBar(currentIndex: 2),
     );
   }
 }
