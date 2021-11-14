@@ -38,13 +38,16 @@ class _AccountPageState extends State<AccountPage> {
                     child: Text('Sign Up'),
                   ),
                 ),
-                OutlinedButton(
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => LoginPage(),
-                    ));
-                  },
-                  child: Text('Sign In'),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: OutlinedButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => LoginPage(),
+                      ));
+                    },
+                    child: Text('Log In'),
+                  ),
                 ),
               ],
             ),
