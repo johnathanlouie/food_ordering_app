@@ -75,18 +75,21 @@ class _AccountPageState extends State<AccountPage> {
             trailing: Icon(Icons.navigate_next_rounded),
             onTap: () {},
           ),
-          ElevatedButton(
-            onPressed: () async {
-              try {
-                await FirebaseAuth.instance.signOut();
-                Navigator.of(context).pushReplacement(MaterialPageRoute(
-                  builder: (BuildContext context) => MyHomePage(),
-                ));
-              } catch (e) {
-                print("Sign out error: $e"); // TODO add error handling
-              }
-            },
-            child: Text('Log Out'),
+          Visibility(
+            visible: FirebaseAuth.instance.currentUser != null,
+            child: ElevatedButton(
+              onPressed: () async {
+                try {
+                  await FirebaseAuth.instance.signOut();
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                    builder: (BuildContext context) => MyHomePage(),
+                  ));
+                } catch (e) {
+                  print("Sign out error: $e"); // TODO add error handling
+                }
+              },
+              child: Text('Log Out'),
+            ),
           ),
         ],
       ),
