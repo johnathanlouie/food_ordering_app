@@ -10,6 +10,8 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  final GlobalKey<FormState> _signUpKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,6 +19,7 @@ class _SignUpPageState extends State<SignUpPage> {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Form(
+          key: _signUpKey,
           child: ListView(
             children: [
               Padding(
