@@ -85,7 +85,7 @@ class _AccountPageState extends State<AccountPage> {
                 print("Sign out error: $e"); // TODO add error handling
               }
             },
-            child: Text('Sign Out'),
+            child: Text('Log Out'),
           ),
         ],
       ),
