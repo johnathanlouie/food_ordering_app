@@ -57,7 +57,7 @@ class _LoginPageState extends State<LoginPage> {
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Logging in....')),
+                          const SnackBar(content: const Text('Logging in....')),
                         );
                         FirebaseAuth.instance
                             .signInWithEmailAndPassword(
@@ -73,7 +73,7 @@ class _LoginPageState extends State<LoginPage> {
                         }).catchError((error) {
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
-                                content: Text('Error registering user.')),
+                                content: const Text('Error registering user.')),
                           );
                         });
                       }
@@ -87,7 +87,7 @@ class _LoginPageState extends State<LoginPage> {
                         if (_formKey.currentState!.validate()) {
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
-                                content: Text('Registering new user....')),
+                                content: const Text('Registering new user....')),
                           );
                           FirebaseAuth.instance
                               .createUserWithEmailAndPassword(
@@ -103,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                           }).catchError((error) {
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
-                                  content: Text('Error registering user.')),
+                                  content: const Text('Error registering user.')),
                             );
                           });
                         }

@@ -31,27 +31,24 @@ class _MenuPageState extends State<MenuPage> {
     return Scaffold(
       appBar: AppBar(),
       body: ListView.separated(
-        padding: EdgeInsets.only(top: 20),
+        padding: const EdgeInsets.only(top: 20),
         itemBuilder: (BuildContext context, int index) {
           return ListTile(
             leading: Image.asset(_a[index]['image']),
             title: Text(
               _a[index]['name'],
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
+              style: Theme.of(context).textTheme.subtitle1,
             ),
-            trailing: Icon(Icons.navigate_next_rounded),
+            trailing: const Icon(Icons.navigate_next_rounded),
             onTap: () {},
           );
         },
         separatorBuilder: (BuildContext context, int index) {
-          return Divider();
+          return const Divider();
         },
         itemCount: _a.length,
       ),
-      bottomNavigationBar: MyBottomBar(MyBottomBar.MENU),
+      bottomNavigationBar: const MyBottomBar(MyBottomBar.MENU),
     );
   }
 }

@@ -21,7 +21,7 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Sign Up')),
+      appBar: AppBar(title: const Text('Sign Up')),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Form(
@@ -35,7 +35,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   style: Theme.of(context).textTheme.headline6,
                 ),
               ),
-              Divider(
+              const Divider(
                 thickness: 2.0,
                 color: Colors.deepPurple,
               ),
@@ -50,7 +50,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     return null;
                   },
                   decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
+                    border: const OutlineInputBorder(),
                     hintText: 'First Name',
                   ),
                   autofocus: true,
@@ -67,7 +67,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     return null;
                   },
                   decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
+                    border: const OutlineInputBorder(),
                     hintText: 'Last Name',
                   ),
                 ),
@@ -79,7 +79,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   style: Theme.of(context).textTheme.headline6,
                 ),
               ),
-              Divider(
+              const Divider(
                 thickness: 2.0,
                 color: Colors.deepPurple,
               ),
@@ -95,7 +95,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   },
                   autocorrect: false,
                   decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
+                    border: const OutlineInputBorder(),
                     hintText: 'Email',
                   ),
                 ),
@@ -114,7 +114,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   obscureText: true,
                   enableSuggestions: false,
                   decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
+                    border: const OutlineInputBorder(),
                     hintText: 'Password',
                   ),
                 ),
@@ -126,7 +126,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   style: Theme.of(context).textTheme.headline6,
                 ),
               ),
-              Divider(
+              const Divider(
                 thickness: 2.0,
                 color: Colors.deepPurple,
               ),
@@ -138,7 +138,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   });
                 },
                 title: const Text('I accept the Terms of Use.'),
-                subtitle: Text(
+                subtitle: const Text(
                     'By joining, I agree to Restaurant Rewards Terms, Restaurant Card Terms, and the Application Terms.'),
                 controlAffinity: ListTileControlAffinity.leading,
               ),
@@ -150,7 +150,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       if (_signUpKey.currentState!.validate()) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
-                            content: Text('Registering the user....'),
+                            content: const Text('Registering the user....'),
                           ),
                         );
                         await FirebaseAuth.instance
@@ -166,12 +166,12 @@ class _SignUpPageState extends State<SignUpPage> {
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
-                          content: Text('Accept the Terms of Use.'),
+                          content: const Text('Accept the Terms of Use.'),
                         ),
                       );
                     }
                   },
-                  child: Text('Join Now'),
+                  child: const Text('Join Now'),
                 ),
               ),
             ],

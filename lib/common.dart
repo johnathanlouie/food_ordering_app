@@ -23,7 +23,7 @@ class MyBottomBar extends StatelessWidget {
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: IconButton(
-            icon: Icon(Icons.home),
+            icon: const Icon(Icons.home),
             onPressed: () {
               if (currentIndex != HOME) {
                 Navigator.of(context).push(
@@ -38,7 +38,7 @@ class MyBottomBar extends StatelessWidget {
         ),
         BottomNavigationBarItem(
           icon: IconButton(
-            icon: Icon(Icons.menu_book),
+            icon: const Icon(Icons.menu_book),
             onPressed: () {
               if (currentIndex != MENU) {
                 Navigator.of(context).push(
@@ -53,7 +53,7 @@ class MyBottomBar extends StatelessWidget {
         ),
         BottomNavigationBarItem(
           icon: IconButton(
-            icon: Icon(Icons.credit_card),
+            icon: const Icon(Icons.credit_card),
             onPressed: () {
               if (currentIndex != PAY) {
                 Navigator.of(context).push(
@@ -68,7 +68,7 @@ class MyBottomBar extends StatelessWidget {
         ),
         BottomNavigationBarItem(
           icon: IconButton(
-            icon: Icon(Icons.star),
+            icon: const Icon(Icons.star),
             onPressed: () {
               if (currentIndex != REWARDS) {
                 Navigator.of(context).push(
@@ -83,7 +83,7 @@ class MyBottomBar extends StatelessWidget {
         ),
         BottomNavigationBarItem(
           icon: IconButton(
-            icon: Icon(Icons.account_box),
+            icon: const Icon(Icons.account_box),
             onPressed: () {
               if (currentIndex != ACCOUNT) {
                 Navigator.of(context).push(

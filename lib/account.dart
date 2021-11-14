@@ -15,8 +15,8 @@ class _AccountPageState extends State<AccountPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Account')),
-      bottomNavigationBar: MyBottomBar(MyBottomBar.ACCOUNT),
+      appBar: AppBar(title: const Text('Account')),
+      bottomNavigationBar: const MyBottomBar(MyBottomBar.ACCOUNT),
       body: Column(
         children: <Widget>[
           Visibility(
@@ -33,7 +33,7 @@ class _AccountPageState extends State<AccountPage> {
                           builder: (context) => SignUpPage(),
                         ));
                       },
-                      child: Text('Sign Up'),
+                      child: const Text('Sign Up'),
                     ),
                   ),
                   Padding(
@@ -44,7 +44,7 @@ class _AccountPageState extends State<AccountPage> {
                           builder: (context) => LoginPage(),
                         ));
                       },
-                      child: Text('Log In'),
+                      child: const Text('Log In'),
                     ),
                   ),
                 ],
@@ -59,18 +59,18 @@ class _AccountPageState extends State<AccountPage> {
             ),
           ),
           ListTile(
-            title: Text('Personal Info'),
-            trailing: Icon(Icons.navigate_next_rounded),
+            title: const Text('Personal Info'),
+            trailing: const Icon(Icons.navigate_next_rounded),
             onTap: () {},
           ),
           ListTile(
-            title: Text('Payment Options'),
-            trailing: Icon(Icons.navigate_next_rounded),
+            title: const Text('Payment Options'),
+            trailing: const Icon(Icons.navigate_next_rounded),
             onTap: () {},
           ),
           ListTile(
-            title: Text('Transaction History'),
-            trailing: Icon(Icons.navigate_next_rounded),
+            title: const Text('Transaction History'),
+            trailing: const Icon(Icons.navigate_next_rounded),
             onTap: () {},
           ),
           Visibility(
@@ -86,7 +86,7 @@ class _AccountPageState extends State<AccountPage> {
                   print("Sign out error: $e"); // TODO add error handling
                 }
               },
-              child: Text('Log Out'),
+              child: const Text('Log Out'),
             ),
           ),
         ],

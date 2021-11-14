@@ -16,17 +16,14 @@ class _RewardsPageState extends State<RewardsPage> {
     return Scaffold(
       appBar: AppBar(),
       body: ListView(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         children: [
           Text(
             '$_rewardPoints pts',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 24,
-            ),
+            style: Theme.of(context).textTheme.headline5,
           ),
           Container(
-            margin: EdgeInsets.only(top: 20),
+            margin: const EdgeInsets.only(top: 20),
             child: LinearProgressIndicator(
               value: _rewardPoints / _maxCheckpoint,
               // valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
@@ -35,13 +32,10 @@ class _RewardsPageState extends State<RewardsPage> {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 20),
+            margin: const EdgeInsets.only(top: 20),
             child: Text(
               'My Rewards',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
+              style: Theme.of(context).textTheme.headline5,
             ),
           ),
           LimitedBox(
@@ -58,19 +52,16 @@ class _RewardsPageState extends State<RewardsPage> {
                 );
               },
               separatorBuilder: (BuildContext context, int index) {
-                return SizedBox(width: 8);
+                return const SizedBox(width: 8);
               },
               itemCount: 10,
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 20),
+            margin: const EdgeInsets.only(top: 20),
             child: Text(
               'Bonus Points',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
-              ),
+              style: Theme.of(context).textTheme.headline5,
             ),
           ),
           Card(
@@ -84,12 +75,12 @@ class _RewardsPageState extends State<RewardsPage> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
                     TextButton(
-                      child: Text('buy now'.toUpperCase()),
+                      child: const Text('Buy Now'),
                       onPressed: () {},
                     ),
                     const SizedBox(width: 8),
                     TextButton(
-                      child: Text('learn more'.toUpperCase()),
+                      child: const Text('Learn More'),
                       onPressed: () {},
                     ),
                     const SizedBox(width: 8),
@@ -100,7 +91,7 @@ class _RewardsPageState extends State<RewardsPage> {
           ),
         ],
       ),
-      bottomNavigationBar: MyBottomBar(MyBottomBar.REWARDS),
+      bottomNavigationBar: const MyBottomBar(MyBottomBar.REWARDS),
     );
   }
 }

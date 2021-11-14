@@ -19,11 +19,11 @@ class _MyHomePageState extends State<MyHomePage> {
         centerTitle: true,
       ),
       body: ListView(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         children: <Widget>[
           Container(child: Image.asset('assets/banner.png')),
           Container(
-            margin: EdgeInsets.only(top: 28),
+            margin: const EdgeInsets.only(top: 28),
             child: Text('Menu', style: Theme.of(context).textTheme.headline5),
           ),
           Container(
@@ -34,32 +34,32 @@ class _MyHomePageState extends State<MyHomePage> {
                 return Image.asset('assets/food.png');
               },
               separatorBuilder: (BuildContext context, int index) {
-                return SizedBox(width: 10);
+                return const SizedBox(width: 10);
               },
               itemCount: 10,
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 28),
+            margin: const EdgeInsets.only(top: 28),
             child: Text('Deals', style: Theme.of(context).textTheme.headline5),
           ),
           Container(
-            margin: EdgeInsets.only(top: 0),
+            margin: const EdgeInsets.only(top: 0),
             child: Image.asset('assets/banner.png'),
           ),
           Container(
-            margin: EdgeInsets.only(top: 6),
+            margin: const EdgeInsets.only(top: 6),
             child: Text(
               '*Nulla in pulvinar libero. Suspendisse fermentum erat in odio auctor malesuada. Vivamus rutrum faucibus purus sodales interdum. Nunc eu ornare nisl. Sed at turpis suscipit metus egestas eleifend sit amet dignissim felis. Donec eleifend orci in leo porttitor mollis. Fusce consequat iaculis dapibus.',
               style: Theme.of(context).textTheme.caption,
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 20),
+            margin: const EdgeInsets.only(top: 20),
             child: Image.asset('assets/banner.png'),
           ),
           Container(
-            margin: EdgeInsets.only(top: 6),
+            margin: const EdgeInsets.only(top: 6),
             child: Text(
               '*Nulla in pulvinar libero. Suspendisse fermentum erat in odio auctor malesuada. Vivamus rutrum faucibus purus sodales interdum. Nunc eu ornare nisl. Sed at turpis suscipit metus egestas eleifend sit amet dignissim felis. Donec eleifend orci in leo porttitor mollis. Fusce consequat iaculis dapibus.',
               style: Theme.of(context).textTheme.caption,
@@ -67,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
-      bottomNavigationBar: MyBottomBar(MyBottomBar.HOME),
+      bottomNavigationBar: const MyBottomBar(MyBottomBar.HOME),
     );
   }
 }
