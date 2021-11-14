@@ -12,6 +12,93 @@ class SignUpPage extends StatefulWidget {
 class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(title: Text('Sign Up')),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Form(
+          child: ListView(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'Personal Info',
+                  style: Theme.of(context).textTheme.headline6,
+                ),
+              ),
+              Divider(),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextField(
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'First Name',
+                  ),
+                  autofocus: true,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextField(
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'Last Name',
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'Security',
+                  style: Theme.of(context).textTheme.headline6,
+                ),
+              ),
+              Divider(),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextField(
+                  autocorrect: false,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'Email',
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextField(
+                  autocorrect: false,
+                  obscureText: true,
+                  enableSuggestions: false,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'Password',
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'Terms',
+                  style: Theme.of(context).textTheme.headline6,
+                ),
+              ),
+              Divider(),
+              ListTile(
+                leading: Checkbox(value: false, onChanged: (isChecked) {}),
+                title: Text('I accept the Terms of Use.'),
+                subtitle: Text(
+                    'By joining, I agree to Restaurant Rewards Terms, Restaurant Card Terms, and the Application Terms.'),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child:
+                    ElevatedButton(onPressed: () {}, child: Text('Join Now')),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
