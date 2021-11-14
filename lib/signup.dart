@@ -139,6 +139,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 title: const Text('I accept the Terms of Use.'),
                 subtitle: Text(
                     'By joining, I agree to Restaurant Rewards Terms, Restaurant Card Terms, and the Application Terms.'),
+                controlAffinity: ListTileControlAffinity.leading,
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
