@@ -34,7 +34,7 @@ class _MenuPageState extends State<MenuPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: const Text('Menu')),
       body: ListView.separated(
         padding: const EdgeInsets.only(top: 20),
         itemBuilder: (BuildContext context, int index) {
