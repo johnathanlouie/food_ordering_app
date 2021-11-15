@@ -10,12 +10,22 @@ class MenuPage extends StatefulWidget {
 class _MenuPageState extends State<MenuPage> {
   List<Map<String, dynamic>> _a = [
     {
-      'name': 'Sandwiches',
+      'name': 'Main Dishes',
       'image': 'assets/food.png',
       'route': '',
     },
     {
-      'name': 'Beverages',
+      'name': 'Sides',
+      'image': 'assets/food.png',
+      'route': '',
+    },
+    {
+      'name': 'Snacks',
+      'image': 'assets/food.png',
+      'route': '',
+    },
+    {
+      'name': 'Appetizers',
       'image': 'assets/food.png',
       'route': '',
     },
@@ -25,7 +35,17 @@ class _MenuPageState extends State<MenuPage> {
       'route': '',
     },
     {
+      'name': 'Beverages',
+      'image': 'assets/food.png',
+      'route': '',
+    },
+    {
       'name': 'Deals',
+      'image': 'assets/food.png',
+      'route': '',
+    },
+    {
+      'name': 'Limited Time Only',
       'image': 'assets/food.png',
       'route': '',
     },
