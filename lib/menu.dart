@@ -20,6 +20,11 @@ class _MenuPageState extends State<MenuPage> {
       'route': '',
     },
     {
+      'name': 'Sweets',
+      'image': 'assets/food.png',
+      'route': '',
+    },
+    {
       'name': 'Deals',
       'image': 'assets/food.png',
       'route': '',
