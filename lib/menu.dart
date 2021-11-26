@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lwd_food_ordering_app/common.dart';
+import 'package:lwd_food_ordering_app/menu_category.dart';
 import 'package:lwd_food_ordering_app/menu_item.dart';
 
 class MenuPage extends StatefulWidget {
@@ -65,7 +66,13 @@ class _MenuPageState extends State<MenuPage> {
               style: Theme.of(context).textTheme.subtitle1,
             ),
             trailing: const Icon(Icons.navigate_next_rounded),
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                    builder: (BuildContext context) =>
+                        MenuCategoryPage(_a[index]['type'])),
+              );
+            },
           );
         },
         separatorBuilder: (BuildContext context, int index) {
