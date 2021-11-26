@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lwd_food_ordering_app/common.dart';
+import 'package:lwd_food_ordering_app/menu_item.dart';
 
 class MenuPage extends StatefulWidget {
   @override
@@ -11,42 +12,42 @@ class _MenuPageState extends State<MenuPage> {
     {
       'name': 'Main Dishes',
       'image': 'assets/food.png',
-      'route': '',
+      'type': MenuItemType.mainDish,
     },
     {
       'name': 'Sides',
       'image': 'assets/food.png',
-      'route': '',
+      'type': MenuItemType.sideDish,
     },
     {
       'name': 'Snacks',
       'image': 'assets/food.png',
-      'route': '',
+      'type': MenuItemType.snack,
     },
     {
       'name': 'Appetizers',
       'image': 'assets/food.png',
-      'route': '',
+      'type': MenuItemType.appetizer,
     },
     {
       'name': 'Sweets',
       'image': 'assets/food.png',
-      'route': '',
+      'type': MenuItemType.sweet,
     },
     {
       'name': 'Beverages',
       'image': 'assets/food.png',
-      'route': '',
+      'type': MenuItemType.beverage,
     },
     {
       'name': 'Deals',
       'image': 'assets/food.png',
-      'route': '',
+      'type': MenuItemType.deal,
     },
     {
       'name': 'Limited Time Only',
       'image': 'assets/food.png',
-      'route': '',
+      'type': MenuItemType.limitedTimeOnly,
     },
   ];
 
