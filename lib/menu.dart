@@ -67,7 +67,7 @@ class _MenuPageState extends State<MenuPage> {
             ),
             trailing: const Icon(Icons.navigate_next_rounded),
             onTap: () {
-              Navigator.of(context).pushReplacement(
+              Navigator.of(context).push(
                 MaterialPageRoute(
                     builder: (BuildContext context) =>
                         MenuCategoryPage(_a[index]['type'])),
