@@ -9,7 +9,7 @@ class MenuPage extends StatefulWidget {
 }
 
 class _MenuPageState extends State<MenuPage> {
-  List<Map<String, dynamic>> _a = [
+  final List<Map<String, dynamic>> _a = const [
     {
       'name': 'Main Dishes',
       'image': 'assets/food.png',
