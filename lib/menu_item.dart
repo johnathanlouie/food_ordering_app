@@ -1,5 +1,16 @@
 import 'package:flutter/material.dart';
 
+enum MenuItemType {
+  mainDish,
+  sideDish,
+  snack,
+  appetizer,
+  sweet,
+  beverage,
+  deal,
+  limitedTimeOnly,
+}
+
 class MenuItem extends StatefulWidget {
   const MenuItem({Key? key}) : super(key: key);
 
