@@ -1,15 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lwd_food_ordering_app/menu_types.dart';
 
-enum MenuItemType {
-  mainDish,
-  sideDish,
-  snack,
-  appetizer,
-  sweet,
-  beverage,
-  deal,
-  limitedTimeOnly,
-}
 
 class MenuItem extends StatefulWidget {
   const MenuItem({Key? key}) : super(key: key);
