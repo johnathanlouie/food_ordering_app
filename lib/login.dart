@@ -53,28 +53,29 @@ class _LoginPageState extends State<LoginPage> {
               Row(
                 children: [
                   ElevatedButton(
-                    onPressed: () {
+                    onPressed: () async {
                       if (_formKey.currentState!.validate()) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(content: const Text('Logging in....')),
                         );
-                        FirebaseAuth.instance
-                            .signInWithEmailAndPassword(
-                          email: _emailController.text,
-                          password: _passwordController.text,
-                        )
-                            .then((UserCredential credentials) {
+                        try {
+                          UserCredential credentials = await FirebaseAuth
+                              .instance
+                              .signInWithEmailAndPassword(
+                            email: _emailController.text,
+                            password: _passwordController.text,
+                          );
                           Navigator.of(context).pushReplacement(
                             MaterialPageRoute(
                                 builder: (BuildContext context) =>
                                     MyHomePage()),
                           );
-                        }).catchError((error) {
+                        } catch (error) {
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
                                 content: const Text('Error registering user.')),
                           );
-                        });
+                        }
                       }
                     },
                     child: const Text('Login'),
@@ -82,29 +83,32 @@ class _LoginPageState extends State<LoginPage> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: ElevatedButton(
-                      onPressed: () {
+                      onPressed: () async {
                         if (_formKey.currentState!.validate()) {
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
-                                content: const Text('Registering new user....')),
+                                content:
+                                    const Text('Registering new user....')),
                           );
-                          FirebaseAuth.instance
-                              .createUserWithEmailAndPassword(
-                            email: _emailController.text,
-                            password: _passwordController.text,
-                          )
-                              .then((UserCredential credentials) {
+                          try {
+                            UserCredential credentials = await FirebaseAuth
+                                .instance
+                                .createUserWithEmailAndPassword(
+                              email: _emailController.text,
+                              password: _passwordController.text,
+                            );
                             Navigator.of(context).pushReplacement(
                               MaterialPageRoute(
                                   builder: (BuildContext context) =>
                                       MyHomePage()),
                             );
-                          }).catchError((error) {
+                          } catch (error) {
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
-                                  content: const Text('Error registering user.')),
+                                  content:
+                                      const Text('Error registering user.')),
                             );
-                          });
+                          }
                         }
                       },
                       child: const Text('Register'),
