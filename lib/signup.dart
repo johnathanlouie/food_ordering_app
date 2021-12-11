@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:lwd_food_ordering_app/home.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -152,15 +154,38 @@ class _SignUpPageState extends State<SignUpPage> {
                             content: const Text('Registering the user....'),
                           ),
                         );
-                        await FirebaseAuth.instance
-                            .createUserWithEmailAndPassword(
-                          email: _email.text,
-                          password: _password.text,
-                        );
-                        // TODO initialize user info in the db
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (context) => MyHomePage()),
-                        );
+                        try {
+                          await FirebaseAuth.instance
+                              .createUserWithEmailAndPassword(
+                            email: _email.text,
+                            password: _password.text,
+                          );
+                          await FirebaseDatabase.instance
+                              .ref()
+                              .child(
+                                  "users/${FirebaseAuth.instance.currentUser!.uid}")
+                              .set({
+                            'firstName': _firstName.text,
+                            'lastName': _lastName.text,
+                          });
+                          SharedPreferences prefs =
+                              await SharedPreferences.getInstance();
+                          await prefs.setString('firstName', _firstName.text);
+                          await prefs.setString('lastName', _lastName.text);
+                          Navigator.of(context).pushReplacement(
+                            MaterialPageRoute(
+                                builder: (context) => MyHomePage()),
+                          );
+                        } catch (e) {
+                          // TODO add real error handling
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content:
+                                  const Text('Error registering new user.'),
+                            ),
+                          );
+                          print(e);
+                        }
                       }
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
