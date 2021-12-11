@@ -50,71 +50,31 @@ class _LoginPageState extends State<LoginPage> {
                   return null;
                 },
               ),
-              Row(
-                children: [
-                  ElevatedButton(
-                    onPressed: () async {
-                      if (_formKey.currentState!.validate()) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: const Text('Logging in....')),
-                        );
-                        try {
-                          UserCredential credentials = await FirebaseAuth
-                              .instance
-                              .signInWithEmailAndPassword(
-                            email: _emailController.text,
-                            password: _passwordController.text,
-                          );
-                          Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(
-                                builder: (BuildContext context) =>
-                                    MyHomePage()),
-                          );
-                        } catch (error) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                                content: const Text('Error registering user.')),
-                          );
-                        }
-                      }
-                    },
-                    child: const Text('Login'),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ElevatedButton(
-                      onPressed: () async {
-                        if (_formKey.currentState!.validate()) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                                content:
-                                    const Text('Registering new user....')),
-                          );
-                          try {
-                            UserCredential credentials = await FirebaseAuth
-                                .instance
-                                .createUserWithEmailAndPassword(
-                              email: _emailController.text,
-                              password: _passwordController.text,
-                            );
-                            Navigator.of(context).pushReplacement(
-                              MaterialPageRoute(
-                                  builder: (BuildContext context) =>
-                                      MyHomePage()),
-                            );
-                          } catch (error) {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                  content:
-                                      const Text('Error registering user.')),
-                            );
-                          }
-                        }
-                      },
-                      child: const Text('Register'),
-                    ),
-                  ),
-                ],
+              ElevatedButton(
+                onPressed: () async {
+                  if (_formKey.currentState!.validate()) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: const Text('Logging in....')),
+                    );
+                    try {
+                      UserCredential credentials = await FirebaseAuth.instance
+                          .signInWithEmailAndPassword(
+                        email: _emailController.text,
+                        password: _passwordController.text,
+                      );
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                            builder: (BuildContext context) => MyHomePage()),
+                      );
+                    } catch (error) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                            content: const Text('Error registering user.')),
+                      );
+                    }
+                  }
+                },
+                child: const Text('Login'),
               ),
             ],
           ),
