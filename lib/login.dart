@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:lwd_food_ordering_app/home.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -62,14 +64,27 @@ class _LoginPageState extends State<LoginPage> {
                         email: _emailController.text,
                         password: _passwordController.text,
                       );
+                      DataSnapshot userInfo = await FirebaseDatabase.instance
+                          .ref(
+                              "users/${FirebaseAuth.instance.currentUser!.uid}")
+                          .get();
+                      String firstName =
+                          userInfo.child('firstName').value as String;
+                      String lastName =
+                          userInfo.child('lastName').value as String;
+                      SharedPreferences prefs =
+                          await SharedPreferences.getInstance();
+                      await prefs.setString('firstName', firstName);
+                      await prefs.setString('lastName', lastName);
                       Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
                             builder: (BuildContext context) => MyHomePage()),
                       );
                     } catch (error) {
+                      // TODO add real error handling
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
-                            content: const Text('Error registering user.')),
+                            content: const Text('Error logging in.')),
                       );
                     }
                   }
