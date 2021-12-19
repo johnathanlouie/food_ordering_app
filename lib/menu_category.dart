@@ -13,11 +13,9 @@ class MenuCategoryPage extends StatelessWidget {
       appBar: AppBar(title: Text(menuItemType.name)),
       body: ListView.builder(
         itemBuilder: (context, index) => ListTile(
-          leading: Image.asset(menuItems[menuItemType]![index]['image']),
-          title: Text(menuItems[menuItemType]![index]['name']),
-          subtitle: Text(
-            "\$${menuItems[menuItemType]![index]['price']} ${menuItems[menuItemType]![index]['minCalories']}-${menuItems[menuItemType]![index]['maxCalories']} Cal.",
-          ),
+          leading: Image.asset(menuItems[menuItemType]![index].image),
+          title: Text(menuItems[menuItemType]![index].name),
+          subtitle: Text(menuItems[menuItemType]![index].priceCalories()),
         ),
         itemCount: menuItems[menuItemType]!.length,
       ),
