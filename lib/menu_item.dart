@@ -17,6 +17,10 @@ class MenuItemData {
     required this.minCalories,
     required this.maxCalories,
   });
+
+  String priceCalories() {
+    return "\$${this.price} ${this.minCalories}-${this.maxCalories} Cal.";
+  }
 }
 
 final Map<MenuItemType, List<MenuItemData>> menuItems = const {
