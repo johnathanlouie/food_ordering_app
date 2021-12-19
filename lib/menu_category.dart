@@ -16,6 +16,11 @@ class MenuCategoryPage extends StatelessWidget {
           leading: Image.asset(menuItems[menuItemType]![index].image),
           title: Text(menuItems[menuItemType]![index].name),
           subtitle: Text(menuItems[menuItemType]![index].priceCalories()),
+          onTap: () {
+            Navigator.of(context).push(MaterialPageRoute(
+              builder: (_) => MenuItem(menuItemType, index),
+            ));
+          },
         ),
         itemCount: menuItems[menuItemType]!.length,
       ),

@@ -259,13 +259,21 @@ final Map<MenuItemType, List<MenuItemData>> menuItems = const {
 };
 
 class MenuItem extends StatefulWidget {
-  const MenuItem({Key? key}) : super(key: key);
+  final MenuItemData _menuItem;
+
+  MenuItem(MenuItemType menuItemType, int menuItemIndex, {Key? key})
+      : _menuItem = menuItems[menuItemType]![menuItemIndex],
+        super(key: key);
 
   @override
-  _MenuItemState createState() => _MenuItemState();
+  _MenuItemState createState() => _MenuItemState(_menuItem);
 }
 
 class _MenuItemState extends State<MenuItem> {
+  final MenuItemData _menuItem;
+
+  _MenuItemState(this._menuItem) : super();
+
   @override
   Widget build(BuildContext context) {
     return Container();
