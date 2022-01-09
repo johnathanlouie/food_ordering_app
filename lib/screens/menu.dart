@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lwd_food_ordering_app/common.dart';
-import 'package:lwd_food_ordering_app/menu_category.dart';
+import 'package:lwd_food_ordering_app/screens/menu_category.dart';
 import 'package:lwd_food_ordering_app/menu_types.dart';
 
 class MenuPage extends StatefulWidget {

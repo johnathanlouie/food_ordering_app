@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lwd_food_ordering_app/common.dart';
-import 'package:lwd_food_ordering_app/home.dart';
-import 'package:lwd_food_ordering_app/login.dart';
-import 'package:lwd_food_ordering_app/signup.dart';
+import 'package:lwd_food_ordering_app/screens/home.dart';
+import 'package:lwd_food_ordering_app/screens/login.dart';
+import 'package:lwd_food_ordering_app/screens/signup.dart';
 
 class AccountPage extends StatefulWidget {
   @override

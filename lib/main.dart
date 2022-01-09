@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:lwd_food_ordering_app/home.dart';
-import 'package:lwd_food_ordering_app/loading.dart';
+import 'package:lwd_food_ordering_app/screens/home.dart';
+import 'package:lwd_food_ordering_app/screens/loading.dart';
 import 'package:lwd_food_ordering_app/user.dart';
 import 'package:provider/provider.dart';
 

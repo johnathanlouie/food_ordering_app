@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:lwd_food_ordering_app/account.dart';
-import 'package:lwd_food_ordering_app/home.dart';
-import 'package:lwd_food_ordering_app/menu.dart';
-import 'package:lwd_food_ordering_app/pay.dart';
-import 'package:lwd_food_ordering_app/rewards.dart';
+import 'package:lwd_food_ordering_app/screens/account.dart';
+import 'package:lwd_food_ordering_app/screens/home.dart';
+import 'package:lwd_food_ordering_app/screens/menu.dart';
+import 'package:lwd_food_ordering_app/screens/pay.dart';
+import 'package:lwd_food_ordering_app/screens/rewards.dart';
 
 class MyBottomBar extends StatelessWidget {
   static const int HOME = 0;
