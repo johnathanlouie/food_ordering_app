@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:lwd_food_ordering_app/common.dart';
 
-class PayPage extends StatefulWidget {
+class PayScreen extends StatefulWidget {
   @override
-  _PayPageState createState() => _PayPageState();
+  _PayScreenState createState() => _PayScreenState();
 }
 
-class _PayPageState extends State<PayPage> {
+class _PayScreenState extends State<PayScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

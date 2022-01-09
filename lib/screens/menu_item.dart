@@ -258,21 +258,21 @@ final Map<MenuItemType, List<MenuItemData>> menuItems = const {
   ],
 };
 
-class MenuItem extends StatefulWidget {
+class MenuItemScreen extends StatefulWidget {
   final MenuItemData _menuItem;
 
-  MenuItem(MenuItemType menuItemType, int menuItemIndex, {Key? key})
+  MenuItemScreen(MenuItemType menuItemType, int menuItemIndex, {Key? key})
       : _menuItem = menuItems[menuItemType]![menuItemIndex],
         super(key: key);
 
   @override
-  _MenuItemState createState() => _MenuItemState(_menuItem);
+  _MenuItemScreenState createState() => _MenuItemScreenState(_menuItem);
 }
 
-class _MenuItemState extends State<MenuItem> {
+class _MenuItemScreenState extends State<MenuItemScreen> {
   final MenuItemData _menuItem;
 
-  _MenuItemState(this._menuItem) : super();
+  _MenuItemScreenState(this._menuItem) : super();
 
   @override
   Widget build(BuildContext context) {

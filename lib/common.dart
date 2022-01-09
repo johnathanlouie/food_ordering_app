@@ -27,7 +27,7 @@ class MyBottomBar extends StatelessWidget {
               if (currentIndex != HOME) {
                 Navigator.of(context).push(
                   MaterialPageRoute(builder: (BuildContext context) {
-                    return MyHomePage();
+                    return HomeScreen();
                   }),
                 );
               }
@@ -42,7 +42,7 @@ class MyBottomBar extends StatelessWidget {
               if (currentIndex != MENU) {
                 Navigator.of(context).push(
                   MaterialPageRoute(builder: (BuildContext context) {
-                    return MenuPage();
+                    return MenuScreen();
                   }),
                 );
               }
@@ -57,7 +57,7 @@ class MyBottomBar extends StatelessWidget {
               if (currentIndex != PAY) {
                 Navigator.of(context).push(
                   MaterialPageRoute(builder: (BuildContext context) {
-                    return PayPage();
+                    return PayScreen();
                   }),
                 );
               }
@@ -72,7 +72,7 @@ class MyBottomBar extends StatelessWidget {
               if (currentIndex != REWARDS) {
                 Navigator.of(context).push(
                   MaterialPageRoute(builder: (BuildContext context) {
-                    return RewardsPage();
+                    return RewardsScreen();
                   }),
                 );
               }
@@ -87,7 +87,7 @@ class MyBottomBar extends StatelessWidget {
               if (currentIndex != ACCOUNT) {
                 Navigator.of(context).push(
                   MaterialPageRoute(builder: (BuildContext context) {
-                    return AccountPage();
+                    return AccountScreen();
                   }),
                 );
               }

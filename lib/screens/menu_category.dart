@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:lwd_food_ordering_app/screens/menu_item.dart';
 import 'package:lwd_food_ordering_app/menu_types.dart';
 
-class MenuCategoryPage extends StatelessWidget {
+class MenuCategoryScreen extends StatelessWidget {
   final MenuItemType menuItemType;
 
-  const MenuCategoryPage(this.menuItemType, {Key? key}) : super(key: key);
+  const MenuCategoryScreen(this.menuItemType, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class MenuCategoryPage extends StatelessWidget {
           subtitle: Text(menuItems[menuItemType]![index].priceCalories()),
           onTap: () {
             Navigator.of(context).push(MaterialPageRoute(
-              builder: (_) => MenuItem(menuItemType, index),
+              builder: (_) => MenuItemScreen(menuItemType, index),
             ));
           },
         ),

@@ -3,12 +3,12 @@ import 'package:lwd_food_ordering_app/common.dart';
 import 'package:lwd_food_ordering_app/screens/menu_category.dart';
 import 'package:lwd_food_ordering_app/menu_types.dart';
 
-class MenuPage extends StatefulWidget {
+class MenuScreen extends StatefulWidget {
   @override
-  _MenuPageState createState() => _MenuPageState();
+  _MenuScreenState createState() => _MenuScreenState();
 }
 
-class _MenuPageState extends State<MenuPage> {
+class _MenuScreenState extends State<MenuScreen> {
   final List<MenuItemType> _categories = const [
     MenuItemType.mainDish,
     MenuItemType.sideDish,
@@ -37,7 +37,7 @@ class _MenuPageState extends State<MenuPage> {
             onTap: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                    builder: (_) => MenuCategoryPage(_categories[index])),
+                    builder: (_) => MenuCategoryScreen(_categories[index])),
               );
             },
           );

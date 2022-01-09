@@ -28,11 +28,11 @@ class _MyAppState extends State<MyApp> {
       builder: (context, snapshot) {
         Widget w;
         if (snapshot.hasError) {
-          w = const LoadingPage(title: 'Error!');
+          w = const LoadingScreen(title: 'Error!');
         } else if (snapshot.connectionState == ConnectionState.done) {
-          w = MyHomePage();
+          w = HomeScreen();
         } else {
-          w = const LoadingPage(title: 'Loading....');
+          w = const LoadingScreen(title: 'Loading....');
         }
         return MaterialApp(
           title: 'Food Ordering App',

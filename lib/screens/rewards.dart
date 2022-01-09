@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:lwd_food_ordering_app/common.dart';
 
-class RewardsPage extends StatefulWidget {
+class RewardsScreen extends StatefulWidget {
   @override
-  _RewardsPageState createState() => _RewardsPageState();
+  _RewardsScreenState createState() => _RewardsScreenState();
 }
 
-class _RewardsPageState extends State<RewardsPage> {
+class _RewardsScreenState extends State<RewardsScreen> {
   int _rewardPoints = 1400;
   int _maxCheckpoint = 6000;
 

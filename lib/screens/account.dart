@@ -5,12 +5,12 @@ import 'package:lwd_food_ordering_app/screens/home.dart';
 import 'package:lwd_food_ordering_app/screens/login.dart';
 import 'package:lwd_food_ordering_app/screens/signup.dart';
 
-class AccountPage extends StatefulWidget {
+class AccountScreen extends StatefulWidget {
   @override
-  _AccountPageState createState() => _AccountPageState();
+  _AccountScreenState createState() => _AccountScreenState();
 }
 
-class _AccountPageState extends State<AccountPage> {
+class _AccountScreenState extends State<AccountScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +29,7 @@ class _AccountPageState extends State<AccountPage> {
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => SignUpPage(),
+                          builder: (context) => SignUpScreen(),
                         ));
                       },
                       child: const Text('Sign Up'),
@@ -40,7 +40,7 @@ class _AccountPageState extends State<AccountPage> {
                     child: OutlinedButton(
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => LoginPage(),
+                          builder: (context) => LoginScreen(),
                         ));
                       },
                       child: const Text('Log In'),
@@ -79,7 +79,7 @@ class _AccountPageState extends State<AccountPage> {
                 try {
                   await FirebaseAuth.instance.signOut();
                   Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (BuildContext context) => MyHomePage(),
+                    builder: (BuildContext context) => HomeScreen(),
                   ));
                 } catch (e) {
                   print("Sign out error: $e"); // TODO add error handling

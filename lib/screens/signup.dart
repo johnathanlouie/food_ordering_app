@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:lwd_food_ordering_app/screens/home.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class SignUpPage extends StatefulWidget {
-  const SignUpPage({Key? key}) : super(key: key);
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({Key? key}) : super(key: key);
 
   @override
-  _SignUpPageState createState() => _SignUpPageState();
+  _SignUpScreenState createState() => _SignUpScreenState();
 }
 
-class _SignUpPageState extends State<SignUpPage> {
+class _SignUpScreenState extends State<SignUpScreen> {
   final GlobalKey<FormState> _signUpKey = GlobalKey<FormState>();
   final TextEditingController _firstName = TextEditingController();
   final TextEditingController _lastName = TextEditingController();
@@ -174,7 +174,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           await prefs.setString('lastName', _lastName.text);
                           Navigator.of(context).pushReplacement(
                             MaterialPageRoute(
-                                builder: (context) => MyHomePage()),
+                                builder: (context) => HomeScreen()),
                           );
                         } catch (e) {
                           // TODO add real error handling
