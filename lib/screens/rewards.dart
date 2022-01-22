@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lwd_food_ordering_app/common.dart';
+import 'package:lwd_food_ordering_app/widgets/bottom_bar.dart';
 
 class RewardsScreen extends StatefulWidget {
   @override
