@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lwd_food_ordering_app/menu_types.dart';
-import 'package:lwd_food_ordering_app/screens/menu_category.dart';
-import 'package:lwd_food_ordering_app/widgets/bottom_bar.dart';
+import 'package:lwd_food_ordering_app/screens.dart';
+import 'package:lwd_food_ordering_app/widgets.dart';
 
 class MenuScreen extends StatefulWidget {
   @override

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lwd_food_ordering_app/screens/menu_item.dart';
 import 'package:lwd_food_ordering_app/menu_types.dart';
+import 'package:lwd_food_ordering_app/screens.dart';
 
 class MenuCategoryScreen extends StatelessWidget {
   final MenuItemType menuItemType;

@@ -1,9 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:lwd_food_ordering_app/screens/home.dart';
-import 'package:lwd_food_ordering_app/screens/login.dart';
-import 'package:lwd_food_ordering_app/screens/signup.dart';
-import 'package:lwd_food_ordering_app/widgets/bottom_bar.dart';
+import 'package:lwd_food_ordering_app/screens.dart';
+import 'package:lwd_food_ordering_app/widgets.dart';
 
 class AccountScreen extends StatefulWidget {
   @override
