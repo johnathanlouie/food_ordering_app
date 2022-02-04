@@ -6,8 +6,11 @@ import 'package:provider/provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(ChangeNotifierProvider(
-    create: (context) => User(),
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(create: (context) => User()),
+      ChangeNotifierProvider(create: (context) => ShoppingCart()),
+    ],
     child: MyApp(),
   ));
 }
