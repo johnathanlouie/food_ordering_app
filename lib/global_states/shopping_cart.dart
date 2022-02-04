@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:lwd_food_ordering_app/menu_types.dart';
+import 'package:lwd_food_ordering_app/common.dart';
 
 class ShoppingCart extends ChangeNotifier {
   static double taxRate = 0.095;

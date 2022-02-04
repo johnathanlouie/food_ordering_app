@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lwd_food_ordering_app/menu_types.dart';
+import 'package:lwd_food_ordering_app/common.dart';
 import 'package:lwd_food_ordering_app/screens.dart';
 import 'package:lwd_food_ordering_app/widgets.dart';
 
