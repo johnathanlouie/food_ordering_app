@@ -19,35 +19,23 @@ class UserLocal {
     );
   }
 
-  static Future<void> set() async {
+  static Future<void> setName(String first, String last) async {
     if (FirebaseAuth.instance.currentUser == null) {
       throw NotLoggedInException();
     }
     SharedPreferences pref = await SharedPreferences.getInstance();
+    await pref.setString('firstName', first);
+    await pref.setString('lastName', last);
+    await pref.setString('userID', FirebaseAuth.instance.currentUser!.uid);
   }
 
-  static Future<void> setFirstName(String firstName) async {
-    (await SharedPreferences.getInstance()).setString('firstName', firstName);
-  }
-
-  static Future<void> setLastName(String lastName) async {
-    (await SharedPreferences.getInstance()).setString('lastName', lastName);
-  }
-
-  static Future<void> setUserID() async {
-    (await SharedPreferences.getInstance())
-        .setString('userID', FirebaseAuth.instance.currentUser!.uid);
-  }
-
-  static Future<void> removeFirstName() async {
-    await (await SharedPreferences.getInstance()).remove('firstName');
-  }
-
-  static Future<void> removeLastName() async {
-    await (await SharedPreferences.getInstance()).remove('lastName');
-  }
-
-  static Future<void> removeUserID() async {
-    await (await SharedPreferences.getInstance()).remove('userID');
+  static Future<void> removeName() async {
+    if (FirebaseAuth.instance.currentUser == null) {
+      throw NotLoggedInException();
+    }
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    await pref.remove('firstName');
+    await pref.remove('lastName');
+    await pref.remove('userID');
   }
 }
