@@ -1,8 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:lwd_food_ordering_app/dao.dart';
 import 'package:lwd_food_ordering_app/screens.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -160,24 +159,20 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             email: _email.text,
                             password: _password.text,
                           );
-                          await FirebaseDatabase.instance
-                              .ref()
-                              .child(
-                                  "users/${FirebaseAuth.instance.currentUser!.uid}")
-                              .set({
-                            'firstName': _firstName.text,
-                            'lastName': _lastName.text,
-                          });
-                          SharedPreferences prefs =
-                              await SharedPreferences.getInstance();
-                          await prefs.setString('firstName', _firstName.text);
-                          await prefs.setString('lastName', _lastName.text);
+                          await UserDao.setName(
+                            first: _firstName.text,
+                            last: _lastName.text,
+                          );
+                          await UserLocal.setName(
+                            first: _firstName.text,
+                            last: _lastName.text,
+                          );
                           Navigator.of(context).pushReplacement(
                             MaterialPageRoute(
                                 builder: (context) => HomeScreen()),
                           );
                         } catch (e) {
-                          // TODO add real error handling
+                          // TODO: Add real error handling.
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
                               content:
