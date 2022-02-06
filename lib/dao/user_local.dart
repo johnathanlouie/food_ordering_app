@@ -19,7 +19,8 @@ class UserLocal {
     );
   }
 
-  static Future<void> setName(String first, String last) async {
+  static Future<void> setName(
+      {required String first, required String last}) async {
     if (FirebaseAuth.instance.currentUser == null) {
       throw NotLoggedInException();
     }
