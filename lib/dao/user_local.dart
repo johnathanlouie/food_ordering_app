@@ -3,7 +3,7 @@ import 'package:lwd_food_ordering_app/common.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class UserLocal {
-  static Future<UserData> get() async {
+  static Future<UserData> getName() async {
     if (FirebaseAuth.instance.currentUser == null) {
       throw NotLoggedInException();
     }
