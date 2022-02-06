@@ -3,7 +3,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:lwd_food_ordering_app/common.dart';
 
 class UserDao {
-  static Future<UserData> get() async {
+  static Future<UserData> getName() async {
     if (FirebaseAuth.instance.currentUser == null) {
       throw NotLoggedInException();
     }
@@ -17,7 +17,7 @@ class UserDao {
     );
   }
 
-  static Future<void> set(String first, String last) async {
+  static Future<void> setName(String first, String last) async {
     if (FirebaseAuth.instance.currentUser == null) {
       throw NotLoggedInException();
     }
