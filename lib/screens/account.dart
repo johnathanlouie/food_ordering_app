@@ -1,7 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:lwd_food_ordering_app/dao.dart';
+import 'package:lwd_food_ordering_app/global_states.dart';
 import 'package:lwd_food_ordering_app/screens.dart';
 import 'package:lwd_food_ordering_app/widgets.dart';
+import 'package:provider/provider.dart';
 
 class AccountScreen extends StatefulWidget {
   @override
@@ -76,11 +79,13 @@ class _AccountScreenState extends State<AccountScreen> {
               onPressed: () async {
                 try {
                   await FirebaseAuth.instance.signOut();
+                  Provider.of<UserState>(context, listen: false).logout();
+                  await UserLocal.removeName();
                   Navigator.of(context).pushReplacement(MaterialPageRoute(
                     builder: (BuildContext context) => HomeScreen(),
                   ));
                 } catch (e) {
-                  print("Sign out error: $e"); // TODO add error handling
+                  print("Sign out error: $e"); // TODO: Add error handling.
                 }
               },
               child: const Text('Log Out'),
