@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:lwd_food_ordering_app/common.dart';
+import 'package:lwd_food_ordering_app/dao.dart';
 import 'package:lwd_food_ordering_app/screens.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -59,29 +59,22 @@ class _LoginScreenState extends State<LoginScreen> {
                       const SnackBar(content: const Text('Logging in....')),
                     );
                     try {
-                      UserCredential credentials = await FirebaseAuth.instance
-                          .signInWithEmailAndPassword(
+                      await FirebaseAuth.instance.signInWithEmailAndPassword(
                         email: _emailController.text,
                         password: _passwordController.text,
                       );
-                      DataSnapshot userInfo = await FirebaseDatabase.instance
-                          .ref(
-                              "users/${FirebaseAuth.instance.currentUser!.uid}")
-                          .get();
-                      String firstName =
-                          userInfo.child('firstName').value as String;
-                      String lastName =
-                          userInfo.child('lastName').value as String;
-                      SharedPreferences prefs =
-                          await SharedPreferences.getInstance();
-                      await prefs.setString('firstName', firstName);
-                      await prefs.setString('lastName', lastName);
+                      UserData userData = await UserDao.getName();
+                      UserLocal.setName(
+                        first: userData.firstName ?? '',
+                        last: userData.lastName ?? '',
+                      );
                       Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
-                            builder: (BuildContext context) => HomeScreen()),
+                          builder: (BuildContext context) => HomeScreen(),
+                        ),
                       );
                     } catch (error) {
-                      // TODO add real error handling
+                      // TODO: Add real error handling.
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
                             content: const Text('Error logging in.')),
