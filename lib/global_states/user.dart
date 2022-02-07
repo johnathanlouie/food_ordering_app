@@ -21,7 +21,7 @@ class User extends ChangeNotifier {
     if (_loggedIn) {
       return _firstName;
     }
-    return '';
+    return 'Guest';
   }
 
   String get lastName {
